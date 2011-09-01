@@ -18,32 +18,19 @@ package com.btmatthews.selenium.junit4.runner;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 /**
- * {@code WebDriverConfiguration} defines class-level meta-data which can be
- * used to instruct client code with regard to use a <a
- * href="http://seleniumhq.org">Selenium</a> web driver.
+ * Used to annotate {@link WebDrive} fields in test cases and method rules that
+ * should be injected by the {@link SeleniumJUnit4ClassRunner}.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
 @Documented
-@Inherited
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-@SeleniumConfiguration
-public @interface WebDriverConfiguration {
-
-	/**
-	 * The web drivers used to launch the tests. By default we just run with <a
-	 * href="http://htmlunit.sourceforge.net/">HTML Unit</a>.
-	 */
-	Class<? extends WebDriver>[] baseDrivers() default { HtmlUnitDriver.class };
+@Target({ ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD })
+public @interface SeleniumWebDriver {
 }

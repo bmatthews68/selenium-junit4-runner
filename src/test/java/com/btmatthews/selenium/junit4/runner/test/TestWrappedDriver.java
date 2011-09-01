@@ -16,23 +16,32 @@
 
 package com.btmatthews.selenium.junit4.runner.test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.btmatthews.selenium.junit4.runner.SeleniumAPI;
 import com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
-import com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
+import com.btmatthews.selenium.junit4.runner.SeleniumServer;
+import com.btmatthews.selenium.junit4.runner.WrappedDriverConfiguration;
 import com.thoughtworks.selenium.Selenium;
 
 @RunWith(SeleniumJUnit4ClassRunner.class)
-@WebDriverConfiguration(browserURL = "http://www.google.ie")
-public class TestGoogleSearch {
-	
-	@SeleniumAPI
+@WrappedDriverConfiguration(browserURL = "http://www.google.com")
+public class TestWrappedDriver {
+
+	@SeleniumServer
 	private Selenium server;
 
 	@Test
-	public void testValidSearch() {
+	public void testInjection() {
+		assertNotNull(server);
+	}
+
+	@Test
+	public void testHomePage() {
 		server.open("/");
+		assertEquals("Google", server.getTitle());
 	}
 }

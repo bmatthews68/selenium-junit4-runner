@@ -23,13 +23,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 /**
- * {@code WebDriverConfiguration} defines class-level meta-data which can be
- * used to instruct client code with regard to use a <a
- * href="http://seleniumhq.org">Selenium</a> web driver.
+ * {@code SeleniumConfiguration} is the base for class-level meta-data which can
+ * be used to instruct client code with regard to use a <a
+ * href="http://seleniumhq.org">Selenium</a>.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
@@ -38,12 +35,6 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@SeleniumConfiguration
-public @interface WebDriverConfiguration {
+public @interface SeleniumConfiguration {
 
-	/**
-	 * The web drivers used to launch the tests. By default we just run with <a
-	 * href="http://htmlunit.sourceforge.net/">HTML Unit</a>.
-	 */
-	Class<? extends WebDriver>[] baseDrivers() default { HtmlUnitDriver.class };
 }

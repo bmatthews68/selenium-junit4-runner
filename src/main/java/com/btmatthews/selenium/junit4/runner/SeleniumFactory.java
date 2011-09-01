@@ -16,19 +16,11 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+public interface SeleniumFactory<T> {
 
-/**
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
- * @since 1.0.0
- */
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD})
-public @interface SeleniumAPI {
+	T create() throws Exception;
 
+	void start(T object) throws Exception;
+
+	void stop(T object) throws Exception;
 }
