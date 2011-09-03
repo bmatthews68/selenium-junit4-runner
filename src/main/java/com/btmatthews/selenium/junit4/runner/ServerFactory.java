@@ -16,11 +16,23 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
+import org.openqa.selenium.WebDriver;
+
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
 
+/**
+ * Factory that is responsible for creating the {@link WebDriver} instance and
+ * acting as a an wrapper for the start and stop methods.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 public class ServerFactory implements SeleniumFactory<Selenium> {
 
+	/**
+	 * 
+	 */
 	private ServerConfiguration configuration;
 
 	private String browserStartCommand;

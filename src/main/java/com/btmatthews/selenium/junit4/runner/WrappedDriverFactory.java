@@ -25,10 +25,24 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import com.google.common.base.Supplier;
 import com.thoughtworks.selenium.Selenium;
 
+/**
+ * Factory that is responsible for creating the {@link Selenium} instance that
+ * wraps a {@link WebDriver} and acting as a an wrapper for the start and stop
+ * methods.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 public class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 
+	/**
+	 * The configuration annotation.
+	 */
 	private WrappedDriverConfiguration configuration;
 
+	/**
+	 * The {@link WebDriver} class.
+	 */
 	private Class<? extends WebDriver> webDriverClass;
 
 	public WrappedDriverFactory(final WrappedDriverConfiguration config,

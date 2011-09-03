@@ -17,26 +17,65 @@
 package com.btmatthews.selenium.junit4.runner;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+/**
+ * Factory that is responsible for creating the {@link WebDriver} instance and
+ * acting as a an wrapper for the start and stop methods.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 public class WebDriverFactory implements SeleniumFactory<WebDriver> {
 
+	/**
+	 * The {@link WebDriver} class.
+	 */
 	private Class<? extends WebDriver> webDriverClass;
 
+	/**
+	 * Construct the factory for creating {@link WebDriver} instances.
+	 * 
+	 * @param config
+	 *            The {@link WebDriverConfiguration} annotation.
+	 * @param driverClass
+	 *            The {@link WebDriver} class.
+	 */
 	public WebDriverFactory(final WebDriverConfiguration config,
 			final Class<? extends WebDriver> driverClass) {
 		webDriverClass = driverClass;
 	}
 
+	/**
+	 * Create an instance of the {@link WebDriver} using reflection.
+	 * 
+	 * @return The new {@link WebDriver} instance.
+	 * @throws Exception
+	 *             If the {@link WebDriver} could not be instantiated.
+	 * @see SeleniumFactory#create()
+	 */
 	public WebDriver create() throws Exception {
 		return webDriverClass.newInstance();
 	}
-	
-	public void start(final WebDriver webDriver) throws Exception {
-		new FirefoxDriver();
+
+	/**
+	 * This method is not implemented because the {@link WebDriver} was started
+	 * during instantiation.
+	 * 
+	 * @param webDriver
+	 *            The {@link WebDriver} instance.
+	 * @see SeleniumFactory#start(Object)
+	 */
+	public void start(final WebDriver webDriver) {
 	}
-	
-	public void stop(final WebDriver webDriver) throws Exception {
+
+	/**
+	 * Stop the {@link WebDriver} by issuing a quit command.
+	 * 
+	 * @param webDriver
+	 *            The {@link WebDriver} instance.
+	 * @see SeleniumFactory#stop(Object)
+	 */
+	public void stop(final WebDriver webDriver) {
 		webDriver.quit();
 	}
 }
