@@ -27,18 +27,33 @@ import com.btmatthews.selenium.junit4.runner.SeleniumServer;
 import com.btmatthews.selenium.junit4.runner.ServerConfiguration;
 import com.thoughtworks.selenium.Selenium;
 
+/**
+ * Unit tests for the {@link ServerConfiguration} configuration style.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 @RunWith(SeleniumJUnit4ClassRunner.class)
 @ServerConfiguration(browserURL = "http://www.google.com")
-public class TestServer {
+public final class TestServer {
 
+	/**
+	 * The object used to start/stop the server used for testing.
+	 */
 	@SeleniumServer
 	private Selenium server;
 
+	/**
+	 * Verify that the test runner injected the Selenium Server.
+	 */
 	@Test
 	public void testInjection() {
 		assertNotNull(server);
 	}
 
+	/**
+	 * Verify that we can navigate to the Google home page.
+	 */
 	@Test
 	public void testHomePage() {
 		server.open("/");

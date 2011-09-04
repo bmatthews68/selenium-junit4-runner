@@ -27,18 +27,34 @@ import com.btmatthews.selenium.junit4.runner.SeleniumServer;
 import com.btmatthews.selenium.junit4.runner.WrappedDriverConfiguration;
 import com.thoughtworks.selenium.Selenium;
 
+/**
+ * Unit tests for the {@link WrappedDriverConfiguration} configuration style.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 @RunWith(SeleniumJUnit4ClassRunner.class)
 @WrappedDriverConfiguration(browserURL = "http://www.google.com")
-public class TestWrappedDriver {
+public final class TestWrappedDriver {
 
+	/**
+	 * The object used to start/stop the web browser used for testing.
+	 */
 	@SeleniumServer
 	private Selenium server;
 
+	/**
+	 * Verify that the test runner injected the Selenium Server that wraps the
+	 * web driver.
+	 */
 	@Test
 	public void testInjection() {
 		assertNotNull(server);
 	}
 
+	/**
+	 * Verify that we can navigate to the Google home page.
+	 */
 	@Test
 	public void testHomePage() {
 		server.open("/");

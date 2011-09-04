@@ -27,18 +27,33 @@ import com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
 import com.btmatthews.selenium.junit4.runner.SeleniumWebDriver;
 import com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
 
+/**
+ * Unit tests for the {@link WebDriverConfigiration} configuration style.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 @RunWith(SeleniumJUnit4ClassRunner.class)
 @WebDriverConfiguration()
-public class TestWebDriver {
+public final class TestWebDriver {
 
+	/**
+	 * The object used to start/stop the web browser used for testing.
+	 */
 	@SeleniumWebDriver
 	private WebDriver webDriver;
 
+	/**
+	 * Verify that the test runner injected the web driver.
+	 */
 	@Test
 	public void testInjection() {
 		assertNotNull(webDriver);
 	}
 
+	/**
+	 * Verify that we can navigate to the Google home page.
+	 */
 	@Test
 	public void testHomePage() {
 		webDriver.navigate().to("http://www.google.com");
