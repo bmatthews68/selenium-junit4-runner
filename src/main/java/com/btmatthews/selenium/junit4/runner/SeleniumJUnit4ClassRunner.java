@@ -69,7 +69,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 * @throws InitializationError
 	 *             If there was an error initialising the test runners.
 	 */
-	private static final List<Runner> buildRunners(final Class<?> klass)
+	private static List<Runner> buildRunners(final Class<?> klass)
 			throws InitializationError {
 		final List<Runner> runners;
 		final ServerConfiguration seleniumServerConfiguration = klass
@@ -105,6 +105,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 *            The test class.
 	 * @return A list of {@link Runner} test runners.
 	 * @throws InitializationError
+	 *             If there was an error initialising the test runners.
 	 */
 	static final List<Runner> buildWebDriverRunners(
 			final WebDriverConfiguration configuration, final Class<?> klass)
@@ -136,8 +137,9 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 *            The test class.
 	 * @return A list of {@link Runner} test runners.
 	 * @throws InitializationError
+	 *             If there was an error initialising the test runners.
 	 */
-	private static final List<Runner> buildWrappedDriverRunners(
+	private static List<Runner> buildWrappedDriverRunners(
 			final WrappedDriverConfiguration configuration, final Class<?> klass)
 			throws InitializationError {
 		final List<Runner> runners = new ArrayList<Runner>();
@@ -166,8 +168,9 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 *            The test class.
 	 * @return A list of {@link Runner} test runners.
 	 * @throws InitializationError
+	 *             If there was an error initialising the test runners.
 	 */
-	private static final List<Runner> buildSeleniumServerRunners(
+	private static List<Runner> buildSeleniumServerRunners(
 			final ServerConfiguration configuration, final Class<?> klass)
 			throws InitializationError {
 		final List<Runner> runners = new ArrayList<Runner>();
@@ -202,7 +205,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 *            2.x API</li>
 	 *            </ul>
 	 */
-	static abstract class AbstractSeleniumJUnit4ClassRunner<T, A extends Annotation>
+	abstract static class AbstractSeleniumJUnit4ClassRunner<T, A extends Annotation>
 			extends BlockJUnit4ClassRunner {
 
 		/**

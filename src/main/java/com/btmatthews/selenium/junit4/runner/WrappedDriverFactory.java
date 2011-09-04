@@ -33,7 +33,7 @@ import com.thoughtworks.selenium.Selenium;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class WrappedDriverFactory implements SeleniumFactory<Selenium> {
+public final class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 
 	/**
 	 * The configuration annotation.
@@ -45,13 +45,31 @@ public class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 	 */
 	private Class<? extends WebDriver> webDriverClass;
 
+	/**
+	 * Construct the factory for creating {@link Selenium} instances that wrap
+	 * web drivers.
+	 * 
+	 * @param config
+	 *            The {@link WrappedDriverConfiguration} annotation that
+	 *            provides configuration for the test runner.
+	 * @param driverClass
+	 *            The {@link WebDriver} class.
+	 */
 	public WrappedDriverFactory(final WrappedDriverConfiguration config,
 			final Class<? extends WebDriver> driverClass) {
 		configuration = config;
 		webDriverClass = driverClass;
 	}
 
-	public Selenium create() throws Exception {
+	/**
+	 * Create a Selenium Server object that wraps the {@link WebDriver} that is
+	 * created using reflection. We are explictly enabling JavaScript.
+	 * 
+	 * @return The new {@link WebDriver} instance.
+	 * @see SeleniumFactory#create()
+	 * TODO: Enabling Javascript is not working for HtmlUnit.
+	 */
+	public Selenium create() {
 		return new WebDriverBackedSelenium(new Supplier<WebDriver>() {
 			public WebDriver get() {
 				final DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -67,10 +85,24 @@ public class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 		}, configuration.browserURL());
 	}
 
+	/**
+	 * Start the browser for the wrapped web driver.
+	 * 
+	 * @param server
+	 *            The Selenium Server wrapping the web driver.
+	 * @see SeleniumFactory#start(Object)
+	 */
 	public void start(final Selenium server) {
 		server.start();
 	}
 
+	/**
+	 * Stop the browser used by the wrapped web driver.
+	 * 
+	 * @param server
+	 *            The Selenium Server wrapping the web driver.
+	 * @see SeleniumFactory#stop(Object)
+	 */
 	public void stop(final Selenium server) {
 		server.stop();
 	}

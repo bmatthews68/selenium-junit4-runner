@@ -16,46 +16,75 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import org.openqa.selenium.WebDriver;
 
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
 
 /**
- * Factory that is responsible for creating the {@link WebDriver} instance and
+ * Factory that is responsible for creating the {@link Selenium} instance and
  * acting as a an wrapper for the start and stop methods.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class ServerFactory implements SeleniumFactory<Selenium> {
+public final class ServerFactory implements SeleniumFactory<Selenium> {
 
 	/**
-	 * 
+	 * The annotation that provides configuration for the test runner.
 	 */
 	private ServerConfiguration configuration;
 
+	/**
+	 * The browser start command (e.g. {@literal "*firefox"}.
+	 */
 	private String browserStartCommand;
 
+	/**
+	 * Construct the factory for creating {@link Selenium} instances.
+	 * 
+	 * @param config
+	 *            The {@link ServerConfiguration} annotation that provides
+	 *            configuration for the test runner.
+	 * @param startCommand
+	 *            The browser start command (e.g. {@literal "*firefox"}).
+	 */
 	public ServerFactory(final ServerConfiguration config,
 			final String startCommand) {
 		configuration = config;
 		browserStartCommand = startCommand;
 	}
 
+	/**
+	 * Create a connection to the the Selenium Server at the host and port
+	 * address specified by configuration annotation.
+	 * 
+	 * @return A {@link DefaultSelenium} object.
+	 */
 	public Selenium create() {
-		final Selenium api = new DefaultSelenium(configuration.serverHost(),
+		return new DefaultSelenium(configuration.serverHost(),
 				configuration.serverPort(), browserStartCommand,
 				configuration.browserURL());
-		return api;
 	}
 
-	public void start(final Selenium api) {
-		api.start();
+	/**
+	 * Connect to the Selenium Server.
+	 * 
+	 * @param server
+	 *            The Selenium Server.
+	 * @see SeleniumFactory#start(Object)
+	 */
+	public void start(final Selenium server) {
+		server.start();
 	}
 
-	public void stop(final Selenium api) {
-		api.stop();
+	/**
+	 * Disconnect from the Selenium Server.
+	 * 
+	 * @param server
+	 *            The Selenium Server.
+	 * @see SeleniumFactory#stop(Object)
+	 */
+	public void stop(final Selenium server) {
+		server.stop();
 	}
-
 }

@@ -25,7 +25,7 @@ import org.openqa.selenium.WebDriver;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class WebDriverFactory implements SeleniumFactory<WebDriver> {
+public final class WebDriverFactory implements SeleniumFactory<WebDriver> {
 
 	/**
 	 * The {@link WebDriver} class.
@@ -36,7 +36,7 @@ public class WebDriverFactory implements SeleniumFactory<WebDriver> {
 	 * Construct the factory for creating {@link WebDriver} instances.
 	 * 
 	 * @param config
-	 *            The {@link WebDriverConfiguration} annotation.
+	 *            The {@link WebDriverConfiguration} annotation that provides configuration for the test runner.
 	 * @param driverClass
 	 *            The {@link WebDriver} class.
 	 */

@@ -22,11 +22,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.thoughtworks.selenium.Selenium;
-
 /**
- * Used to annotate {@link Selenium} fields in test cases and method rules that
- * should be injected by the {@link SeleniumJUnit4ClassRunner}.
+ * Used to annotate {@link Selenium com.thoughtworks.selenium.Selenium} fields
+ * in test cases and method rules that should be injected by the
+ * {@link SeleniumJUnit4ClassRunner}.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
