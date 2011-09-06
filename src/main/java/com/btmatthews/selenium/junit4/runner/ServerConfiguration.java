@@ -40,15 +40,15 @@ public @interface ServerConfiguration {
 
 	/**
 	 * The host on which the Selenium Server resides. The default value is
-	 * {@literal localhost}.
+	 * {@link Constants#SELENIUM_SERVER_HOST}.
 	 */
-	String serverHost() default "localhost";
+	String serverHost() default Constants.SELENIUM_SERVER_HOST;
 
 	/**
 	 * The port on which the Selenium Server is listening. The default value is
-	 * {@literal 4444}.
+	 * {@link Constants#SELENIUM_SERVER_PORT}.
 	 */
-	int serverPort() default 4444;
+	int serverPort() default Constants.SELENIUM_SERVER_PORT;
 
 	/**
 	 * The browser URL.
@@ -56,8 +56,8 @@ public @interface ServerConfiguration {
 	String browserURL();
 
 	/**
-	 * The browser start commands used to launch the tests. By default we just
-	 * run with Firefox.
+	 * The browser start commands used to launch the tests. The default value is
+	 * {@link Constants#DEFAULT_START_COMMAND}.
 	 */
-	String[] browserStartCommands() default { "*firefox" };
+	String[] browserStartCommands() default { Constants.DEFAULT_START_COMMAND };
 }

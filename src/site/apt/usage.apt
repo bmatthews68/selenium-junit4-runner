@@ -1,0 +1,101 @@
+ ------
+ Overview
+ ------
+ Brian Matthews
+ ------
+ 2011-09-06
+ ------
+
+~~ Copyright 2011 Brian Matthews
+~~
+~~ Licensed under the Apache License, Version 2.0 (the "License");
+~~ you may not use this file except in compliance with the License.
+~~ You may obtain a copy of the License at
+~~
+~~     http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing, software
+~~ distributed under the License is distributed on an "AS IS" BASIS,
+~~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~ See the License for the specific language governing permissions and
+~~ limitations under the License.
+
+
+Usage
+
+* Step 1 - Annotate your test class
+
+  Tell JUnit to run execute the your integration tests using the Selenium JUnit 4 Class Runner using the following annotation on
+  your test class:
+
+-------------------
+@RunWith(SeleniumJUnit4ClassRunner.class)
+-------------------
+
+  Note: @RunWith annotation is inherited.
+
+* Step 2 - Pick the Selenium API
+
+  Decide whether you are going to use the Selenium 1.0 or 2.0 API by applying the appropriate annotation from the table below
+  to your test class:
+  
+*-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
+| Annotation                  | API Version | Implementation  | When to use                                                       |
+*-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
+| @ServerConfiguration        | 1.0         | Selenium Server | This should be consider the legacy API and is not recommended for |
+|                             |             |                 | creating new test suites                                          |
+*-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
+| @WebDriverConfiguration     | 2.0         | Web Driver      | Recommended                                                       |
+*-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
+| @WrappedDriverConfiguration | 1.0         | Web Driver      | Suitable for use when migrating existing test suites              |
+*-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
+  
+* Step 3 - Configure the API
+  
+** Selenium Server
+
+  The table below lists the fields that you can use to configure the Selenium 1.0 API using a Selenium Server:
+  
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| Field                | Type                             | Default                    | Description                              |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| browserURL           | String                           | None                       |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| browserStartCommands | String\[\]                       | \{ "*firefox" \}           |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| serverHost           | String                           | "localhost"                |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| serverPort           | int                              | 4444                       |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+  
+** Web Driver
+
+  The table below lists the fields that you can use to configure the Selenium 2.0 API using a web driver:
+  
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| Field                | Type                             | Default                    | Description                              |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| baseDrivers          | Class\<? extends WebDriver\>\[\] | \{ HtmlunitDriver.class \} |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+
+** Wrapped Driver
+  
+  The table below lists the fields that you can use to configure the Selenium 1.0 API when using a wrapped web driver:
+  
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| Field                | Type                             | Default                    | Description                              |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| baseDrivers          | Class\<? extends WebDriver\>\[\] | \{ HtmlunitDriver.class \} |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+| browserURL           | String                           | None                       |                                          |
+*----------------------+----------------------------------+----------------------------+------------------------------------------+
+
+* Step 4. Annotate you API object
+
+*-----------------+-------------------------------------------------------------+------------+
+| Annotation      | Use with                                                    | Field type |
+*-----------------+-------------------------------------------------------------+------------+
+| @SeleniumServer | @SeleniumServerConfiguration or @WrappedDriverConfiguration | Selenium   |
+*-----------------+-------------------------------------------------------------+------------+
+| @WebDriver      | @WebDriverConfiguration                                     | WebDriver  |
+*-----------------+-------------------------------------------------------------+------------+

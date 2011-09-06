@@ -28,7 +28,7 @@ import com.btmatthews.selenium.junit4.runner.SeleniumWebDriver;
 import com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
 
 /**
- * Unit tests for the {@link WebDriverConfigiration} configuration style.
+ * Unit tests for the {@link WebDriverConfiguration} configuration style.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0

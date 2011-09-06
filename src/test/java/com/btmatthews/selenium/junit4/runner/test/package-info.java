@@ -15,6 +15,6 @@
  */
 
 /**
- * The classes that implement the unit tests for {@link SelenuiumJUnit4ClassRunner}.
+ * The classes that implement the unit tests for {@link SeleniumJUnit4ClassRunner}.
  */
 package com.btmatthews.selenium.junit4.runner.test;
