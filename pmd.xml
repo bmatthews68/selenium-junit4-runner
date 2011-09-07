@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-09-07T04:02:18.373">
+<pmd version="4.2.5" timestamp="2011-09-07T04:24:06.178">
 <file name="C:\play\k\target\checkout\src\main\java\com\btmatthews\selenium\junit4\runner\WebDriverFactory.java">
 <violation beginline="43" endline="46" begincolumn="16" endcolumn="9" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="com.btmatthews.selenium.junit4.runner" class="WebDriverFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
 Avoid unused constructor parameters such as 'config'.
