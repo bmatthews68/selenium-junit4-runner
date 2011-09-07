@@ -28,9 +28,9 @@ Usage
   Tell JUnit to run execute the your integration tests using the Selenium JUnit 4 Class Runner using the following annotation on
   your test class:
 
--------------------
++-------------------------------+
 @RunWith(SeleniumJUnit4ClassRunner.class)
--------------------
++-------------------------------+
 
   Note: @RunWith annotation is inherited.
 
@@ -49,7 +49,7 @@ Usage
 *-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
 | @WrappedDriverConfiguration | 1.0         | Web Driver      | Suitable for use when migrating existing test suites              |
 *-----------------------------+-------------+-----------------+-------------------------------------------------------------------+
-  
+
 * Step 3 - Configure the API
   
 ** Selenium Server
@@ -59,13 +59,17 @@ Usage
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
 | Field                | Type                             | Default                    | Description                              |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| browserURL           | String                           | None                       |                                          |
+| browserURL           | String                           | None                       | The starting URL for integration tests   |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| browserStartCommands | String\[\]                       | \{ "*firefox" \}           |                                          |
+| browserStartCommands | String\[\]                       | \{ "*firefox" \}           | The command strings used to launch each  |
+|                      |                                  |                            | browser for which the tests are to be    |
+|                      |                                  |                            | run                                      |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| serverHost           | String                           | "localhost"                |                                          |
+| serverHost           | String                           | "localhost"                | The host name on which the Selenium      |
+|                      |                                  |                            | server resides                           |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| serverPort           | int                              | 4444                       |                                          |
+| serverPort           | int                              | 4444                       | The port number on which the Selenium    |
+|                      |                                  |                            | server is listening                      |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
   
 ** Web Driver
@@ -75,7 +79,9 @@ Usage
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
 | Field                | Type                             | Default                    | Description                              |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| baseDrivers          | Class\<? extends WebDriver\>\[\] | \{ HtmlunitDriver.class \} |                                          |
+| baseDrivers          | Class\<? extends WebDriver\>\[\] | \{ HtmlUnitDriver.class \} | The web driver classes used to launch    |
+|                      |                                  |                            | each browser for which the tests are to  |
+|                      |                                  |                            | be run                                   |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
 
 ** Wrapped Driver
@@ -85,13 +91,18 @@ Usage
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
 | Field                | Type                             | Default                    | Description                              |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| baseDrivers          | Class\<? extends WebDriver\>\[\] | \{ HtmlunitDriver.class \} |                                          |
+| baseDrivers          | Class\<? extends WebDriver\>\[\] | \{ HtmlUnitDriver.class \} | The web driver classes used to launch    |
+|                      |                                  |                            | each browser for which the tests are to  |
+|                      |                                  |                            | be run                                   |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
-| browserURL           | String                           | None                       |                                          |
+| browserURL           | String                           | None                       | The starting URL for integration tests   |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
 
 * Step 4. Annotate you API object
 
+  The table below lists the annotations that you can used to inject the <<<Selenium>>> or <<<WebDriver>>> instance as a test
+  fixture:
+   
 *-----------------+-------------------------------------------------------------+------------+
 | Annotation      | Use with                                                    | Field type |
 *-----------------+-------------------------------------------------------------+------------+
