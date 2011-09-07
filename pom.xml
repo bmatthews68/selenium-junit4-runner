@@ -191,8 +191,8 @@
 		</dependency>
 	</dependencies>
 	<scm>
+		<url>https://github.com/bmatthews68/selenium-junit4-runner</url>
 		<connection>scm:git:git@github.com:bmatthews68/selenium-junit4-runner.git</connection>
-		<url>scm:git:git@github.com:bmatthews68/selenium-junit4-runner.git</url>
 		<developerConnection>scm:git:git@github.com:bmatthews68/selenium-junit4-runner.git</developerConnection>
 	</scm>
 	<url>https://github.com/bmatthews68/selenium-junit4-runner</url>
