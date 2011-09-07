@@ -36,7 +36,7 @@ Selenium JUnit 4 Class Runner
   The code snippet below shows the step up and tear down required to create an integration test without
   the Selenium JUnit 4 Class Runner:
   
--------------------
++-------------------------------+
 public void class GoogleHomePageITCase {
 
     private static Selenium server;
@@ -55,11 +55,11 @@ public void class GoogleHomePageITCase {
     .
     .
 }
--------------------
++-------------------------------+
 
   The code snippet below demonstrates how the same can be achieved more cleanly with the Selenium JUnit 4 Class Runner:
   
--------------------
++-------------------------------+
 @RunWith(SeleniumJUnit4ClassRunner.class)
 @ServerConfiguration(browserURL = "http://www.google.com")
 public void class GoogleHomePageITCase {
@@ -70,7 +70,7 @@ public void class GoogleHomePageITCase {
     .
     .
 }
--------------------
++-------------------------------+
 
 * Usage
 
@@ -89,18 +89,8 @@ public void class GoogleHomePageITCase {
 
   []
 
-* Known Issues
-
-  The following are the known issues at the time of writing:
-  
-  * {{{https://github.com/bmatthews68/selenium-junit4-runner/issues/1}Wrapped web driver not working for HtmlunitDriver}}
-
-  []
-
 * Future Plans
 
-  * {{{https://github.com/bmatthews68/selenium-junit4-runner/issues?milestone=2}1.0.1}} - Fix known issues
-  
   * {{{https://github.com/bmatthews68/selenium-junit4-runner/issues?milestone=3}1.1.0}} - Implement custom method rules
 
   []
