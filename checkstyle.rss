@@ -8,9 +8,9 @@
     <language>en-us</language>
     <copyright>&#169;2011 Brian Matthews</copyright>
     <item>
-      <title>File: 15,
+      <title>File: 13,
              Errors: 0,
-             Warnings: 5,
+             Warnings: 0,
              Infos: 0
       </title>
             <link>https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html</link>
@@ -155,20 +155,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WrappedDriverFactory.java">com/btmatthews/selenium/junit4/runner/WrappedDriverFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.Constants.java">com/btmatthews/selenium/junit4/runner/Constants.java</a>
                 </td>
                 <td>
@@ -197,13 +183,13 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.rule.ScreenCapture.java">com/btmatthews/selenium/junit4/rule/ScreenCapture.java</a>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WrappedDriverFactory.java">com/btmatthews/selenium/junit4/runner/WrappedDriverFactory.java</a>
                 </td>
                 <td>
                   0
                 </td>
                 <td>
-                  4
+                  0
                 </td>
                 <td>
                   0
@@ -218,20 +204,6 @@
                 </td>
                 <td>
                   0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.rule.package-info.java">com/btmatthews/selenium/junit4/rule/package-info.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
                 </td>
                 <td>
                   0
