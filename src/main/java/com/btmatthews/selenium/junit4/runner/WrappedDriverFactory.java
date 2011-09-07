@@ -16,11 +16,9 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import org.apache.commons.lang.reflect.ConstructorUtils;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import com.google.common.base.Supplier;
 import com.thoughtworks.selenium.Selenium;
@@ -63,23 +61,22 @@ public final class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 
 	/**
 	 * Create a Selenium Server object that wraps the {@link WebDriver} that is
-	 * created using reflection. We are explictly enabling JavaScript.
+	 * created using reflection. We are explicitly enabling JavaScript for the
+	 * {@link HtmlUnitDriver} case.
 	 * 
 	 * @return The new {@link WebDriver} instance.
-	 * @see SeleniumFactory#create()
-	 * TODO: Enabling Javascript is not working for HtmlUnit.
 	 */
 	public Selenium create() {
 		return new WebDriverBackedSelenium(new Supplier<WebDriver>() {
 			public WebDriver get() {
-				final DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setJavascriptEnabled(true);
-				try {
-					return (WebDriver) ConstructorUtils.invokeConstructor(
-							webDriverClass, new Object[] { capabilities },
-							new Class[] { Capabilities.class });
-				} catch (Exception e) {
-					return null;
+				if (HtmlUnitDriver.class.isAssignableFrom(webDriverClass)) {
+					return new HtmlUnitDriver(true);
+				} else {
+					try {
+						return webDriverClass.newInstance();
+					} catch (Exception e) {
+						return null;
+					}
 				}
 			}
 		}, configuration.browserURL());
