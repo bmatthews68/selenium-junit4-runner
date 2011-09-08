@@ -23,6 +23,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.btmatthews.selenium.junit4.runner.SeleniumBrowser;
 import com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
 import com.btmatthews.selenium.junit4.runner.SeleniumWebDriver;
 import com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
@@ -43,12 +44,20 @@ public final class WebDriverITCase {
 	@SeleniumWebDriver
 	private WebDriver webDriver;
 
+    /**
+     * The name of the browser being used for the test.
+     */	
+	@SeleniumBrowser
+	private String browserName;
+
 	/**
 	 * Verify that the test runner injected the web driver.
 	 */
 	@Test
 	public void testInjection() {
 		assertNotNull(webDriver);
+		assertNotNull(browserName);
+		assertEquals("HtmlUnitDriver", browserName);
 	}
 
 	/**

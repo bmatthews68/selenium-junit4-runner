@@ -194,15 +194,15 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 * 
 	 * @param <T>
 	 *            <ul>
-	 *            <li>{@link Selenium} for tests that use the Selenium 1.x API</li>
-	 *            <li>{@link WebDriver} for tests that use the Selenium 2.x API</li>
+	 *            <li>{@link Selenium} for tests that use the Selenium 1.0 API</li>
+	 *            <li>{@link WebDriver} for tests that use the Selenium 2.0 API</li>
 	 *            </ul>
 	 * @param <A>
 	 *            <ul>
-	 *            <li>{@link SeleniumServer} for tests that use the Selenium 1.x
+	 *            <li>{@link SeleniumServer} for tests that use the Selenium 1.0
 	 *            API</li>
 	 *            <li>{@link SeleniumWebDriver} for tests that use the Selenium
-	 *            2.x API</li>
+	 *            2.0 API</li>
 	 *            </ul>
 	 */
 	abstract static class AbstractSeleniumJUnit4ClassRunner<T, A extends Annotation>
@@ -279,10 +279,17 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 		protected Object createTest() throws Exception {
 			final Object test = super.createTest();
 			final TestClass testClass = getTestClass();
-			final List<FrameworkField> fields = testClass
+			final String browser = seleniumFactory.getBrowser();
+
+			List<FrameworkField> fields = testClass
 					.getAnnotatedFields(annotationType);
 			for (final FrameworkField field : fields) {
 				FieldUtils.writeField(field.getField(), test, selenium, true);
+			}
+
+			fields = testClass.getAnnotatedFields(SeleniumBrowser.class);
+			for (final FrameworkField field : fields) {
+				FieldUtils.writeField(field.getField(), test, browser, true);
 			}
 
 			final List<MethodRule> rules = testClass.getAnnotatedFieldValues(
@@ -292,6 +299,8 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 				for (final Field ruleField : ruleFields) {
 					if (ruleField.getAnnotation(annotationType) != null) {
 						FieldUtils.writeField(ruleField, rule, selenium, true);
+					} else if (ruleField.getAnnotation(SeleniumBrowser.class) != null) {
+						FieldUtils.writeField(ruleField, rule, browser, true);
 					}
 				}
 			}

@@ -60,6 +60,16 @@ public final class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 	}
 
 	/**
+	 * Return a string to identify the browser derived from the class name of
+	 * the underlying web driver.
+	 * 
+	 * @return The derived browser identification string.
+	 */
+	public String getBrowser() {
+		return webDriverClass.getSimpleName();
+	}
+
+	/**
 	 * Create a Selenium Server object that wraps the {@link WebDriver} that is
 	 * created using reflection. We are explicitly enabling JavaScript for the
 	 * {@link HtmlUnitDriver} case.

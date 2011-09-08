@@ -98,7 +98,7 @@ Usage
 | browserURL           | String                           | None                       | The starting URL for integration tests   |
 *----------------------+----------------------------------+----------------------------+------------------------------------------+
 
-* Step 4. Annotate you API object
+* Step 4. Annotate your API object
 
   The table below lists the annotations that you can used to inject the <<<Selenium>>> or <<<WebDriver>>> instance as a test
   fixture:
@@ -110,3 +110,8 @@ Usage
 *-----------------+-------------------------------------------------------------+------------+
 | @WebDriver      | @WebDriverConfiguration                                     | WebDriver  |
 *-----------------+-------------------------------------------------------------+------------+
+
+* Step 5. Annotate a browser name field (Optional)
+
+  You can use the <<<@SeleniumBrowser>>> annotation to annotate a member variable of type string into which <<<SeleniumJUnit4ClassRunner>>>
+  will inject a string to identify the browser name.

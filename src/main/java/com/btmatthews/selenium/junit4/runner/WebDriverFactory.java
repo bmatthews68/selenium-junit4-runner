@@ -36,13 +36,24 @@ public final class WebDriverFactory implements SeleniumFactory<WebDriver> {
 	 * Construct the factory for creating {@link WebDriver} instances.
 	 * 
 	 * @param config
-	 *            The {@link WebDriverConfiguration} annotation that provides configuration for the test runner.
+	 *            The {@link WebDriverConfiguration} annotation that provides
+	 *            configuration for the test runner.
 	 * @param driverClass
 	 *            The {@link WebDriver} class.
 	 */
 	public WebDriverFactory(final WebDriverConfiguration config,
 			final Class<? extends WebDriver> driverClass) {
 		webDriverClass = driverClass;
+	}
+
+	/**
+	 * Return a string to identify the browser derived from the class name of
+	 * the underlying web driver.
+	 * 
+	 * @return The derived browser identification string.
+	 */
+	public String getBrowser() {
+		return webDriverClass.getSimpleName();
 	}
 
 	/**

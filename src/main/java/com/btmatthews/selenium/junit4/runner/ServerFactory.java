@@ -16,6 +16,7 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
+import org.apache.commons.lang.StringUtils;
 
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
@@ -52,6 +53,22 @@ public final class ServerFactory implements SeleniumFactory<Selenium> {
 			final String startCommand) {
 		configuration = config;
 		browserStartCommand = startCommand;
+	}
+
+	/**
+	 * Return a string to identify the browser by trimming the leading * from
+	 * the {@code browserStartCommand}.
+	 * 
+	 * @return The derived browser identification string.
+	 */
+	public String getBrowser() {
+		String browser;
+		if (StringUtils.startsWith(browserStartCommand, "*")) {
+			browser = browserStartCommand.substring(1);
+		} else {
+			browser = StringUtils.EMPTY;
+		}
+		return browser;
 	}
 
 	/**

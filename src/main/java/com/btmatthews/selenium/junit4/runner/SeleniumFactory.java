@@ -33,6 +33,13 @@ package com.btmatthews.selenium.junit4.runner;
 public interface SeleniumFactory<T> {
 
 	/**
+	 * Return a string to identify the browser.
+	 * 
+	 * @return A browser identification string.
+	 */
+	String getBrowser();
+
+	/**
 	 * Create the Selenium Server, Web Driver or Wrapped Web Driver object.
 	 * 
 	 * @return A instance of {@code T}.

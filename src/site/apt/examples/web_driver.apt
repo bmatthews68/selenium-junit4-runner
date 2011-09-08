@@ -55,12 +55,20 @@ public final class TestWebDriver {
 	@SeleniumWebDriver
 	private WebDriver webDriver;
 
+    /**
+     * The name of the browser being used for the test.
+     */	
+	@SeleniumBrowser
+	private String browserName;
+
 	/**
 	 * Verify that the test runner injected the web driver.
 	 */
 	@Test
 	public void testInjection() {
 		assertNotNull(webDriver);
+		assertNotNull(browserName);
+		assertEquals("HtmlUnitDriver", browserName);
 	}
 
 	/**

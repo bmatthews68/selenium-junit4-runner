@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import com.btmatthews.selenium.junit4.runner.SeleniumBrowser;
 import com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
 import com.btmatthews.selenium.junit4.runner.SeleniumServer;
 import com.btmatthews.selenium.junit4.runner.ServerConfiguration;
@@ -43,12 +44,20 @@ public final class ServerITCase {
 	@SeleniumServer
 	private Selenium server;
 
+    /**
+     * The name of the browser being used for the test.
+     */	
+	@SeleniumBrowser
+	private String browserName;
+
 	/**
 	 * Verify that the test runner injected the Selenium Server.
 	 */
 	@Test
 	public void testInjection() {
 		assertNotNull(server);
+		assertNotNull(browserName);
+		assertEquals("firefox", browserName);
 	}
 
 	/**
