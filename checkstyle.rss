@@ -6,7 +6,7 @@
     <link>https://github.com/bmatthews68/selenium-junit4-runner</link>
     <description>Selenium Junit 4 Runner - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2011 Brian Matthews</copyright>
+    <copyright>&#169;2011 - 2012 Brian Matthews</copyright>
     <item>
       <title>File: 14,
              Errors: 0,
@@ -29,63 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.ServerConfiguration.java">com/btmatthews/selenium/junit4/runner/ServerConfiguration.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WebDriverConfiguration.java">com/btmatthews/selenium/junit4/runner/WebDriverConfiguration.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumBrowser.java">com/btmatthews/selenium/junit4/runner/SeleniumBrowser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumFactory.java">com/btmatthews/selenium/junit4/runner/SeleniumFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumServer.java">com/btmatthews/selenium/junit4/runner/SeleniumServer.java</a>
                 </td>
                 <td>
                   0
@@ -113,35 +57,35 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WebDriverFactory.java">com/btmatthews/selenium/junit4/runner/WebDriverFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumServer.java">com/btmatthews/selenium/junit4/runner/SeleniumServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumConfiguration.java">com/btmatthews/selenium/junit4/runner/SeleniumConfiguration.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumWebDriver.java">com/btmatthews/selenium/junit4/runner/SeleniumWebDriver.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WrappedDriverConfiguration.java">com/btmatthews/selenium/junit4/runner/WrappedDriverConfiguration.java</a>
                 </td>
                 <td>
                   0
@@ -169,6 +113,62 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumFactory.java">com/btmatthews/selenium/junit4/runner/SeleniumFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumBrowser.java">com/btmatthews/selenium/junit4/runner/SeleniumBrowser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.ServerConfiguration.java">com/btmatthews/selenium/junit4/runner/ServerConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumWebDriver.java">com/btmatthews/selenium/junit4/runner/SeleniumWebDriver.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WrappedDriverFactory.java">com/btmatthews/selenium/junit4/runner/WrappedDriverFactory.java</a>
                 </td>
                 <td>
@@ -183,35 +183,35 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.Constants.java">com/btmatthews/selenium/junit4/runner/Constants.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WebDriverFactory.java">com/btmatthews/selenium/junit4/runner/WebDriverFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner.java">com/btmatthews/selenium/junit4/runner/SeleniumJUnit4ClassRunner.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.WrappedDriverConfiguration.java">com/btmatthews/selenium/junit4/runner/WrappedDriverConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.Constants.java">com/btmatthews/selenium/junit4/runner/Constants.java</a>
                 </td>
                 <td>
                   0
