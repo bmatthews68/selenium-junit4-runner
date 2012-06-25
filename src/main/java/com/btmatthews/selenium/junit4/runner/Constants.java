@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.btmatthews.selenium.junit4.runner;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public final class Constants {
+final class Constants {
 
 	/**
 	 * The default host name of the Selenium Server.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +33,12 @@ public final class ServerFactory implements SeleniumFactory<Selenium> {
 	/**
 	 * The annotation that provides configuration for the test runner.
 	 */
-	private ServerConfiguration configuration;
+	private final ServerConfiguration configuration;
 
 	/**
 	 * The browser start command (e.g. {@literal "*firefox"}.
 	 */
-	private String browserStartCommand;
+	private final String browserStartCommand;
 
 	/**
 	 * Construct the factory for creating {@link Selenium} instances.

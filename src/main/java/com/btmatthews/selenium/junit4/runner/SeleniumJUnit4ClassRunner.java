@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.reflect.FieldUtils;
-import org.junit.Rule;
-import org.junit.rules.MethodRule;
+import org.junit.rules.TestRule;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
@@ -107,7 +106,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 	 * @throws InitializationError
 	 *             If there was an error initialising the test runners.
 	 */
-	static final List<Runner> buildWebDriverRunners(
+	private static List<Runner> buildWebDriverRunners(
 			final WebDriverConfiguration configuration, final Class<?> klass)
 			throws InitializationError {
 		final List<Runner> runners = new ArrayList<Runner>();
@@ -189,7 +188,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 
 	/**
 	 * An abstract test runner that implements the
-	 * {@link Runner#run(RunNotifier)} and {@link ParentRunner<T>#createTest()}
+	 * {@link Runner#run(RunNotifier)} and {@link org.junit.runners.ParentRunner<T>#createTest() ParentRunner<T>#createTest()}
 	 * methods generically.
 	 * 
 	 * @param <T>
@@ -292,9 +291,8 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 				FieldUtils.writeField(field.getField(), test, browser, true);
 			}
 
-			final List<MethodRule> rules = testClass.getAnnotatedFieldValues(
-					test, Rule.class, MethodRule.class);
-			for (final MethodRule rule : rules) {
+			final List<TestRule> rules =this.getTestRules(test);
+			for (final TestRule rule : rules) {
 				final Field[] ruleFields = rule.getClass().getDeclaredFields();
 				for (final Field ruleField : ruleFields) {
 					if (ruleField.getAnnotation(annotationType) != null) {

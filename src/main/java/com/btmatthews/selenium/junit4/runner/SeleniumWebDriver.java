@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Used to annotate {@link WebDrive} fields in test cases and method rules that
+ * Used to annotate {@link org.openqa.selenium.WebDriver WebDriver} fields in test cases and method rules that
  * should be injected by the {@link SeleniumJUnit4ClassRunner}.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ package com.btmatthews.selenium.junit4.runner;
  * 
  * @param <T>
  *            <ul>
- *            <li>{@link Selenium} for Selenium Server and Wrapped Web Driver
+ *            <li>{@link com.thoughtworks.selenium.Selenium Selenium} for Selenium Server and Wrapped Web Driver
  *            factories</li>
- *            <li>{@link WebDriver} for Web Driver factories</li>
+ *            <li>{@link org.openqa.selenium.WebDriver WebDriver} for Web Driver factories</li>
  *            </ul>
  */
 public interface SeleniumFactory<T> {

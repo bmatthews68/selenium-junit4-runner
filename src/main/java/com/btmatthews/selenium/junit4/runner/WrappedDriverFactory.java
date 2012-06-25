@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,12 +36,12 @@ public final class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 	/**
 	 * The configuration annotation.
 	 */
-	private WrappedDriverConfiguration configuration;
+	private final WrappedDriverConfiguration configuration;
 
 	/**
 	 * The {@link WebDriver} class.
 	 */
-	private Class<? extends WebDriver> webDriverClass;
+	private final Class<? extends WebDriver> webDriverClass;
 
 	/**
 	 * Construct the factory for creating {@link Selenium} instances that wrap
