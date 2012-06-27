@@ -6,7 +6,7 @@
 	</prerequisites>
 	<groupId>com.btmatthews.selenium.junit4</groupId>
 	<artifactId>selenium-junit4-runner</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>Selenium Junit 4 Runner</name>
 	<description>Annotations to simplify the use of Selenium in JUnit 4 tests</description>
 	<inceptionYear>2011</inceptionYear>
