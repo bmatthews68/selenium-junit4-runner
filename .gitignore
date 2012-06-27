@@ -3,3 +3,5 @@
 /.classpath
 /.checkstyle
 /.project
+/.idea
+/selenium-junit4-runner.iml
