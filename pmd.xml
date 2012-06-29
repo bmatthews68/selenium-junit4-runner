@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-02-08T02:27:42.552">
-<file name="D:\temp\selenium-junit4-runner\target\checkout\src\main\java\com\btmatthews\selenium\junit4\runner\WebDriverFactory.java">
+<pmd version="4.3" timestamp="2012-06-29T00:54:46.755">
+<file name="D:\github\selenium-junit4-runner\target\checkout\src\main\java\com\btmatthews\selenium\junit4\runner\WebDriverFactory.java">
 <violation beginline="44" endline="47" begincolumn="16" endcolumn="9" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="com.btmatthews.selenium.junit4.runner" class="WebDriverFactory" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
 Avoid unused constructor parameters such as 'config'.
 </violation>
