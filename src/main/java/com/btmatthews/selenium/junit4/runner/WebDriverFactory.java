@@ -35,14 +35,10 @@ public final class WebDriverFactory implements SeleniumFactory<WebDriver> {
 	/**
 	 * Construct the factory for creating {@link WebDriver} instances.
 	 * 
-	 * @param config
-	 *            The {@link WebDriverConfiguration} annotation that provides
-	 *            configuration for the test runner.
 	 * @param driverClass
 	 *            The {@link WebDriver} class.
 	 */
-	public WebDriverFactory(final WebDriverConfiguration config,
-			final Class<? extends WebDriver> driverClass) {
+	public WebDriverFactory(final Class<? extends WebDriver> driverClass) {
 		webDriverClass = driverClass;
 	}
 

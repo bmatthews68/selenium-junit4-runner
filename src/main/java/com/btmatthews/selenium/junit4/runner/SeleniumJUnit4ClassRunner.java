@@ -113,8 +113,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 		try {
 			for (final Class<? extends WebDriver> webDriverClass : configuration
 					.baseDrivers()) {
-				final WebDriverFactory factory = new WebDriverFactory(
-						configuration, webDriverClass);
+				final WebDriverFactory factory = new WebDriverFactory(webDriverClass);
 				runners.add(new SeleniumWebDriverJUnit4ClassRunner(factory,
 						klass));
 			}
@@ -291,7 +290,7 @@ public class SeleniumJUnit4ClassRunner extends Suite {
 				FieldUtils.writeField(field.getField(), test, browser, true);
 			}
 
-			final List<TestRule> rules =this.getTestRules(test);
+			final List<TestRule> rules = this.getTestRules(test);
 			for (final TestRule rule : rules) {
 				final Field[] ruleFields = rule.getClass().getDeclaredFields();
 				for (final Field ruleField : ruleFields) {
