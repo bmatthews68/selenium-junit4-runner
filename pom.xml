@@ -27,6 +27,7 @@
 	</developers>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 	<build>
 		<extensions>
@@ -53,7 +54,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
+				<version>2.2</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -93,7 +94,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.12</version>
+				<version>2.12.2</version>
 				<executions>
 					<execution>
 						<id>run-integration-tests</id>
@@ -160,7 +161,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.12</version>
+				<version>2.12.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -187,7 +188,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.5</version>
 			</plugin>
 		</plugins>
 	</reporting>
@@ -195,7 +196,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.24.1</version>
+			<version>2.25.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -207,8 +208,8 @@
 		<url>scm:git:git@github.com:bmatthews68/selenium-junit4-runner.git</url>
 		<connection>scm:git:git@github.com:bmatthews68/selenium-junit4-runner.git</connection>
 		<developerConnection>scm:git:git@github.com:bmatthews68/selenium-junit4-runner.git</developerConnection>
-          <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 	<url>https://github.com/bmatthews68/selenium-junit4-runner</url>
 	<organization>
 		<name>Brian Matthews</name>
