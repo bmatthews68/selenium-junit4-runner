@@ -22,6 +22,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import com.google.common.base.Supplier;
 import com.thoughtworks.selenium.Selenium;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * Factory that is responsible for creating the {@link Selenium} instance that
@@ -80,7 +81,9 @@ public final class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 		return new WebDriverBackedSelenium(new Supplier<WebDriver>() {
 			public WebDriver get() {
 				if (HtmlUnitDriver.class.isAssignableFrom(webDriverClass)) {
-					return new HtmlUnitDriver(true);
+                    final DesiredCapabilities capabilities = DesiredCapabilities.htmlUnit();
+                    capabilities.setJavascriptEnabled(true);
+					return new HtmlUnitDriver(capabilities);
 				} else {
 					try {
 						return webDriverClass.newInstance();
