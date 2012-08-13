@@ -10,7 +10,7 @@
     <item>
       <title>File: 14,
              Errors: 0,
-             Warnings: 1,
+             Warnings: 0,
              Infos: 0
       </title>
             <link>https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html</link>
@@ -189,7 +189,7 @@
                   0
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   0
