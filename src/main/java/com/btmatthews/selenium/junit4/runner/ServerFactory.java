@@ -16,92 +16,87 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import org.apache.commons.lang.StringUtils;
-
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Factory that is responsible for creating the {@link Selenium} instance and
  * acting as a an wrapper for the start and stop methods.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
 public final class ServerFactory implements SeleniumFactory<Selenium> {
 
-	/**
-	 * The annotation that provides configuration for the test runner.
-	 */
-	private final ServerConfiguration configuration;
+    /**
+     * The annotation that provides configuration for the test runner.
+     */
+    private final ServerConfiguration configuration;
 
-	/**
-	 * The browser start command (e.g. {@literal "*firefox"}.
-	 */
-	private final String browserStartCommand;
+    /**
+     * The browser start command (e.g. {@literal "*firefox"}.
+     */
+    private final String browserStartCommand;
 
-	/**
-	 * Construct the factory for creating {@link Selenium} instances.
-	 * 
-	 * @param config
-	 *            The {@link ServerConfiguration} annotation that provides
-	 *            configuration for the test runner.
-	 * @param startCommand
-	 *            The browser start command (e.g. {@literal "*firefox"}).
-	 */
-	public ServerFactory(final ServerConfiguration config,
-			final String startCommand) {
-		configuration = config;
-		browserStartCommand = startCommand;
-	}
+    /**
+     * Construct the factory for creating {@link Selenium} instances.
+     *
+     * @param config       The {@link ServerConfiguration} annotation that provides
+     *                     configuration for the test runner.
+     * @param startCommand The browser start command (e.g. {@literal "*firefox"}).
+     */
+    public ServerFactory(final ServerConfiguration config,
+                         final String startCommand) {
+        configuration = config;
+        browserStartCommand = startCommand;
+    }
 
-	/**
-	 * Return a string to identify the browser by trimming the leading * from
-	 * the {@code browserStartCommand}.
-	 * 
-	 * @return The derived browser identification string.
-	 */
-	public String getBrowser() {
-		String browser;
-		if (StringUtils.startsWith(browserStartCommand, "*")) {
-			browser = browserStartCommand.substring(1);
-		} else {
-			browser = StringUtils.EMPTY;
-		}
-		return browser;
-	}
+    /**
+     * Return a string to identify the browser by trimming the leading * from
+     * the {@code browserStartCommand}.
+     *
+     * @return The derived browser identification string.
+     */
+    public String getBrowser() {
+        String browser;
+        if (StringUtils.startsWith(browserStartCommand, "*")) {
+            browser = browserStartCommand.substring(1);
+        } else {
+            browser = StringUtils.EMPTY;
+        }
+        return browser;
+    }
 
-	/**
-	 * Create a connection to the the Selenium Server at the host and port
-	 * address specified by configuration annotation.
-	 * 
-	 * @return A {@link DefaultSelenium} object.
-	 */
-	public Selenium create() {
-		return new DefaultSelenium(configuration.serverHost(),
-				configuration.serverPort(), browserStartCommand,
-				configuration.browserURL());
-	}
+    /**
+     * Create a connection to the the Selenium Server at the host and port
+     * address specified by configuration annotation.
+     *
+     * @return A {@link DefaultSelenium} object.
+     */
+    public Selenium create() {
+        return new DefaultSelenium(configuration.serverHost(),
+                configuration.serverPort(), browserStartCommand,
+                configuration.browserURL());
+    }
 
-	/**
-	 * Connect to the Selenium Server.
-	 * 
-	 * @param server
-	 *            The Selenium Server.
-	 * @see SeleniumFactory#start(Object)
-	 */
-	public void start(final Selenium server) {
-		server.start();
-	}
+    /**
+     * Connect to the Selenium Server.
+     *
+     * @param server The Selenium Server.
+     * @see SeleniumFactory#start(Object)
+     */
+    public void start(final Selenium server) {
+        server.start();
+    }
 
-	/**
-	 * Disconnect from the Selenium Server.
-	 * 
-	 * @param server
-	 *            The Selenium Server.
-	 * @see SeleniumFactory#stop(Object)
-	 */
-	public void stop(final Selenium server) {
-		server.stop();
-	}
+    /**
+     * Disconnect from the Selenium Server.
+     *
+     * @param server The Selenium Server.
+     * @see SeleniumFactory#stop(Object)
+     */
+    public void stop(final Selenium server) {
+        server.stop();
+    }
 }
