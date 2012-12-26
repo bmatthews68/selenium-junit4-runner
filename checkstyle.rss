@@ -8,9 +8,9 @@
     <language>en-us</language>
     <copyright>&#169;2011 - 2012 Brian Matthews</copyright>
     <item>
-      <title>File: 14,
+      <title>File: 18,
              Errors: 0,
-             Warnings: 0,
+             Warnings: 8,
              Infos: 0
       </title>
             <link>https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html</link>
@@ -50,6 +50,20 @@
                 </td>
                 <td>
                   0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.rule.ScreenShotOnFailure.java">com/btmatthews/selenium/junit4/rule/ScreenShotOnFailure.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
                 </td>
                 <td>
                   0
@@ -141,6 +155,20 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.rule.ScreenShotFilenameGenerator.java">com/btmatthews/selenium/junit4/rule/ScreenShotFilenameGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.runner.ServerConfiguration.java">com/btmatthews/selenium/junit4/runner/ServerConfiguration.java</a>
                 </td>
                 <td>
@@ -204,6 +232,34 @@
                 </td>
                 <td>
                   0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.rule.package-info.java">com/btmatthews/selenium/junit4/rule/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/bmatthews68/selenium-junit4-runner/checkstyle.html#com.btmatthews.selenium.junit4.rule.DefaultScreenShotFilenameGenerator.java">com/btmatthews/selenium/junit4/rule/DefaultScreenShotFilenameGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
                 </td>
                 <td>
                   0

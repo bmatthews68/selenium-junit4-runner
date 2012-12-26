@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.3" timestamp="2012-11-23T02:07:25.270">
+<pmd version="4.3" timestamp="2012-12-26T10:35:33.959">
+<file name="C:\Users\Brian\Documents\GitHub\selenium-junit4-runner\target\checkout\src\main\java\com\btmatthews\selenium\junit4\rule\DefaultScreenShotFilenameGenerator.java">
+<violation beginline="33" endline="33" begincolumn="43" endcolumn="53" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.btmatthews.selenium.junit4.rule" class="DefaultScreenShotFilenameGenerator" variable="DATE_FORMAT" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'DATE_FORMAT'.
+</violation>
+</file>
+<file name="C:\Users\Brian\Documents\GitHub\selenium-junit4-runner\target\checkout\src\main\java\com\btmatthews\selenium\junit4\rule\ScreenShotOnFailure.java">
+<violation beginline="101" endline="102" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="com.btmatthews.selenium.junit4.rule" class="ScreenShotOnFailure" method="failed" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
 </pmd>
