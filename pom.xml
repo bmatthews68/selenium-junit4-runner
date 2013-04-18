@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <prerequisites>
-        <maven>3.0.4</maven>
+        <maven>3.0.5</maven>
     </prerequisites>
     <groupId>com.btmatthews.selenium.junit4</groupId>
     <artifactId>selenium-junit4-runner</artifactId>
@@ -34,17 +35,17 @@
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>1.7</version>
+                <version>1.8.1</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>1.7</version>
+                <version>1.8.1</version>
             </extension>
             <extension>
-                <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+                <groupId>com.github.stephenc.wagon</groupId>
                 <artifactId>wagon-gitsite</artifactId>
-                <version>0.3.1</version>
+                <version>0.4.1</version>
             </extension>
         </extensions>
         <plugins>
@@ -101,7 +102,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.12.4</version>
+                <version>2.14.1</version>
                 <executions>
                     <execution>
                         <id>run-integration-tests</id>
@@ -115,7 +116,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.4</version>
+                <version>2.4.1</version>
                 <configuration>
                     <mavenExecutorId>forked-path</mavenExecutorId>
                 </configuration>
@@ -154,21 +155,21 @@
         <plugins>
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>2.10</version>
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
+                    <configLocation>config/sun_checks.xml</configLocation>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.7.1</version>
+                <version>3.0.1</version>
                 <configuration>
                     <targetJdk>1.5</targetJdk>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.12.4</version>
+                <version>2.14.1</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -203,12 +204,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.26.0</version>
+            <version>2.32.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>2.26.0</version>
+            <version>2.32.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
