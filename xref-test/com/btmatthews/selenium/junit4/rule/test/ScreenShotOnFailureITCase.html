@@ -9,7 +9,7 @@
 <div id="overview"><a href="../../../../../../../testapidocs/com/btmatthews/selenium/junit4/rule/test/ScreenShotOnFailureITCase.html">View Javadoc</a></div><pre>
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
-<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2011-2012 Brian Matthews</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2011-2013 Brian Thomas Matthews</em>
 <a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> *</em>
 <a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> * Licensed under the Apache License, Version 2.0 (the "License");</em>
 <a class="jxr_linenumber" name="5" href="#5">5</a>   <em class="jxr_comment"> * you may not use this file except in compliance with the License.</em>
@@ -26,22 +26,22 @@
 <a class="jxr_linenumber" name="16" href="#16">16</a>  
 <a class="jxr_linenumber" name="17" href="#17">17</a>  <strong class="jxr_keyword">package</strong> com.btmatthews.selenium.junit4.rule.test;
 <a class="jxr_linenumber" name="18" href="#18">18</a>  
-<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
-<a class="jxr_linenumber" name="20" href="#20">20</a>  
-<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.rule.ScreenShotOnFailure;
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.runner.SeleniumWebDriver;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> org.junit.Rule;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.junit.runner.RunWith;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.openqa.selenium.WebDriver;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.openqa.selenium.firefox.FirefoxDriver;
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.rule.ScreenShotOnFailure;
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.runner.SeleniumWebDriver;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> org.junit.Rule;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> org.junit.runner.RunWith;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.openqa.selenium.WebDriver;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.openqa.selenium.firefox.FirefoxDriver;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <em class="jxr_javadoccomment"> * Integration test cases for the {@link ScreenShotOnFailure} rule.</em>
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <em class="jxr_javadoccomment"> *</em>
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> * @author &lt;a href="<a href="mailto:brian@btmatthews.com" target="alexandria_uri">mailto:brian@btmatthews.com</a>"&gt;Brian Matthews&lt;/a&gt;</em>
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> * @author &lt;a href="<a href="mailto:brian@btmatthews.com" target="alexandria_uri">mailto:brian@btmatthews.com</a>"&gt;Brian Thomas Matthews&lt;/a&gt;</em>
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment"> * @since 1.0.5</em>
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="37" href="#37">37</a>  @RunWith(SeleniumJUnit4ClassRunner.<strong class="jxr_keyword">class</strong>)
@@ -49,16 +49,16 @@
 <a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/btmatthews/selenium/junit4/rule/test/ScreenShotOnFailureITCase.html">ScreenShotOnFailureITCase</a> {
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
 <a class="jxr_linenumber" name="41" href="#41">41</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">     * The object used to start/stop the web browser used for testing.</em>
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">     * This run dumps screen shots to the target/screenshots directory when the test case fails.</em>
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="44" href="#44">44</a>      @SeleniumWebDriver
-<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">private</strong> WebDriver webDriver;
-<a class="jxr_linenumber" name="46" href="#46">46</a>  
-<a class="jxr_linenumber" name="47" href="#47">47</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment">     * This run dumps screen shots to the target/screenshots directory when the test case fails.</em>
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="50" href="#50">50</a>      @Rule
-<a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> ScreenShotOnFailure screenShotRule = <strong class="jxr_keyword">new</strong> ScreenShotOnFailure(<span class="jxr_string">"target/screenshots"</span>);
+<a class="jxr_linenumber" name="44" href="#44">44</a>      @Rule
+<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">public</strong> ScreenShotOnFailure screenShotRule = <strong class="jxr_keyword">new</strong> ScreenShotOnFailure(<span class="jxr_string">"target/screenshots"</span>);
+<a class="jxr_linenumber" name="46" href="#46">46</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment">     * The object used to start/stop the web browser used for testing.</em>
+<a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="49" href="#49">49</a>      @SuppressWarnings(<span class="jxr_string">"unused"</span>)
+<a class="jxr_linenumber" name="50" href="#50">50</a>      @SeleniumWebDriver
+<a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">private</strong> WebDriver webDriver;
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="54" href="#54">54</a>  <em class="jxr_javadoccomment">     * This test case always fails triggering the {@link #screenShotRule} rule which will take a screen shot and</em>
@@ -67,7 +67,7 @@
 <a class="jxr_linenumber" name="57" href="#57">57</a>      @Test
 <a class="jxr_linenumber" name="58" href="#58">58</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testRule() {
 <a class="jxr_linenumber" name="59" href="#59">59</a>          webDriver.navigate().to(<span class="jxr_string">"http://www.google.com"</span>);
-<a class="jxr_linenumber" name="60" href="#60">60</a>          assertEquals(<span class="jxr_string">""</span>, webDriver.getTitle());
+<a class="jxr_linenumber" name="60" href="#60">60</a>          assertEquals(<span class="jxr_string">"Google"</span>, webDriver.getTitle());
 <a class="jxr_linenumber" name="61" href="#61">61</a>      }
 <a class="jxr_linenumber" name="62" href="#62">62</a>  }
 </pre>
