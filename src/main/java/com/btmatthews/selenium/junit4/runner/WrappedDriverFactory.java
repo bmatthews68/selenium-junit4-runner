@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,105 +16,100 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
+import com.google.common.base.Supplier;
+import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverBackedSelenium;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-import com.google.common.base.Supplier;
-import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * Factory that is responsible for creating the {@link Selenium} instance that
  * wraps a {@link WebDriver} and acting as a an wrapper for the start and stop
  * methods.
- * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ *
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.0
  */
 public final class WrappedDriverFactory implements SeleniumFactory<Selenium> {
 
-	/**
-	 * The configuration annotation.
-	 */
-	private final WrappedDriverConfiguration configuration;
+    /**
+     * The configuration annotation.
+     */
+    private final WrappedDriverConfiguration configuration;
 
-	/**
-	 * The {@link WebDriver} class.
-	 */
-	private final Class<? extends WebDriver> webDriverClass;
+    /**
+     * The {@link WebDriver} class.
+     */
+    private final Class<? extends WebDriver> webDriverClass;
 
-	/**
-	 * Construct the factory for creating {@link Selenium} instances that wrap
-	 * web drivers.
-	 * 
-	 * @param config
-	 *            The {@link WrappedDriverConfiguration} annotation that
-	 *            provides configuration for the test runner.
-	 * @param driverClass
-	 *            The {@link WebDriver} class.
-	 */
-	public WrappedDriverFactory(final WrappedDriverConfiguration config,
-			final Class<? extends WebDriver> driverClass) {
-		configuration = config;
-		webDriverClass = driverClass;
-	}
+    /**
+     * Construct the factory for creating {@link Selenium} instances that wrap
+     * web drivers.
+     *
+     * @param config      The {@link WrappedDriverConfiguration} annotation that
+     *                    provides configuration for the test runner.
+     * @param driverClass The {@link WebDriver} class.
+     */
+    public WrappedDriverFactory(final WrappedDriverConfiguration config,
+                                final Class<? extends WebDriver> driverClass) {
+        configuration = config;
+        webDriverClass = driverClass;
+    }
 
-	/**
-	 * Return a string to identify the browser derived from the class name of
-	 * the underlying web driver.
-	 * 
-	 * @return The derived browser identification string.
-	 */
-	public String getBrowser() {
-		return webDriverClass.getSimpleName();
-	}
+    /**
+     * Return a string to identify the browser derived from the class name of
+     * the underlying web driver.
+     *
+     * @return The derived browser identification string.
+     */
+    public String getBrowser() {
+        return webDriverClass.getSimpleName();
+    }
 
-	/**
-	 * Create a Selenium Server object that wraps the {@link WebDriver} that is
-	 * created using reflection. We are explicitly enabling JavaScript for the
-	 * {@link HtmlUnitDriver} case.
-	 * 
-	 * @return The new {@link WebDriver} instance.
-	 */
-	public Selenium create() {
-		return new WebDriverBackedSelenium(new Supplier<WebDriver>() {
-			public WebDriver get() {
-				if (HtmlUnitDriver.class.isAssignableFrom(webDriverClass)) {
+    /**
+     * Create a Selenium Server object that wraps the {@link WebDriver} that is
+     * created using reflection. We are explicitly enabling JavaScript for the
+     * {@link HtmlUnitDriver} case.
+     *
+     * @return The new {@link WebDriver} instance.
+     */
+    public Selenium create() {
+        return new WebDriverBackedSelenium(new Supplier<WebDriver>() {
+            public WebDriver get() {
+                if (HtmlUnitDriver.class.isAssignableFrom(webDriverClass)) {
                     final DesiredCapabilities capabilities = DesiredCapabilities.htmlUnit();
                     capabilities.setJavascriptEnabled(true);
-					return new HtmlUnitDriver(capabilities);
-				} else {
-					try {
-						return webDriverClass.newInstance();
-					} catch (Exception e) {
-						return null;
-					}
-				}
-			}
-		}, configuration.browserURL());
-	}
+                    return new HtmlUnitDriver(capabilities);
+                } else {
+                    try {
+                        return webDriverClass.newInstance();
+                    } catch (Exception e) {
+                        return null;
+                    }
+                }
+            }
+        }, configuration.browserURL());
+    }
 
-	/**
-	 * Start the browser for the wrapped web driver.
-	 * 
-	 * @param server
-	 *            The Selenium Server wrapping the web driver.
-	 * @see SeleniumFactory#start(Object)
-	 */
-	public void start(final Selenium server) {
-		server.start();
-	}
+    /**
+     * Start the browser for the wrapped web driver.
+     *
+     * @param server The Selenium Server wrapping the web driver.
+     * @see SeleniumFactory#start(Object)
+     */
+    public void start(final Selenium server) {
+        server.start();
+    }
 
-	/**
-	 * Stop the browser used by the wrapped web driver.
-	 * 
-	 * @param server
-	 *            The Selenium Server wrapping the web driver.
-	 * @see SeleniumFactory#stop(Object)
-	 */
-	public void stop(final Selenium server) {
-		server.stop();
-	}
+    /**
+     * Stop the browser used by the wrapped web driver.
+     *
+     * @param server The Selenium Server wrapping the web driver.
+     * @see SeleniumFactory#stop(Object)
+     */
+    public void stop(final Selenium server) {
+        server.stop();
+    }
 
 }

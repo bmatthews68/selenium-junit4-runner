@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,17 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * Used to annotate {@link org.openqa.selenium.WebDriver WebDriver} fields in test cases and method rules that
  * should be injected by the {@link SeleniumJUnit4ClassRunner}.
- * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ *
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.0
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD })
+@Target({ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.METHOD})
 public @interface SeleniumWebDriver {
 }

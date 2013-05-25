@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,14 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * {@code ServerConfiguration} defines class-level meta-data which can be used
  * to instruct client code with regard to use a <a
  * href="http://seleniumhq.org">Selenium</a> server.
- * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ *
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.0
  */
 @Documented
@@ -38,26 +33,26 @@ import java.lang.annotation.Target;
 @SeleniumConfiguration
 public @interface ServerConfiguration {
 
-	/**
-	 * The host on which the Selenium Server resides. The default value is
-	 * {@link Constants#SELENIUM_SERVER_HOST}.
-	 */
-	String serverHost() default Constants.SELENIUM_SERVER_HOST;
+    /**
+     * The host on which the Selenium Server resides. The default value is
+     * {@link Constants#SELENIUM_SERVER_HOST}.
+     */
+    String serverHost() default Constants.SELENIUM_SERVER_HOST;
 
-	/**
-	 * The port on which the Selenium Server is listening. The default value is
-	 * {@link Constants#SELENIUM_SERVER_PORT}.
-	 */
-	int serverPort() default Constants.SELENIUM_SERVER_PORT;
+    /**
+     * The port on which the Selenium Server is listening. The default value is
+     * {@link Constants#SELENIUM_SERVER_PORT}.
+     */
+    int serverPort() default Constants.SELENIUM_SERVER_PORT;
 
-	/**
-	 * The browser URL.
-	 */
-	String browserURL();
+    /**
+     * The browser URL.
+     */
+    String browserURL();
 
-	/**
-	 * The browser start commands used to launch the tests. The default value is
-	 * {@link Constants#DEFAULT_START_COMMAND}.
-	 */
-	String[] browserStartCommands() default { Constants.DEFAULT_START_COMMAND };
+    /**
+     * The browser start commands used to launch the tests. The default value is
+     * {@link Constants#DEFAULT_START_COMMAND}.
+     */
+    String[] browserStartCommands() default {Constants.DEFAULT_START_COMMAND};
 }

@@ -6,7 +6,7 @@
     </prerequisites>
     <groupId>com.btmatthews.selenium.junit4</groupId>
     <artifactId>selenium-junit4-runner</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.6-SNAPSHOT</version>
     <name>Selenium Junit 4 Runner</name>
     <description>Annotations to simplify the use of Selenium in JUnit 4 tests</description>
     <inceptionYear>2011</inceptionYear>
@@ -20,7 +20,7 @@
     <developers>
         <developer>
             <id>bmatthews68</id>
-            <name>Brian Matthews</name>
+            <name>Brian Thomas Matthews</name>
             <email>brian@brianmatthews.me</email>
             <url>http://brianmatthews.me</url>
         </developer>
@@ -50,7 +50,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.3</version>
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
@@ -195,7 +195,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.6</version>
+                <version>2.7</version>
             </plugin>
         </plugins>
     </reporting>
@@ -203,17 +203,29 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.32.0</version>
+            <version>2.33.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>2.32.0</version>
+            <version>2.33.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.5</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <scm>
@@ -224,7 +236,7 @@
     </scm>
     <url>https://github.com/bmatthews68/selenium-junit4-runner</url>
     <organization>
-        <name>Brian Matthews</name>
+        <name>Brian Thomas Matthews</name>
         <url>http://btmatthews.com</url>
     </organization>
     <issueManagement>

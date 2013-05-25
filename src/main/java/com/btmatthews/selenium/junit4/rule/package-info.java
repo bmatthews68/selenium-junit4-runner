@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,6 @@
  */
 
 /**
- * The classes that implement test rules that depend on {@link SelenuiumJUnit4ClassRunner}.
+ * The classes that implement test rules that depend on {@link SeleniumJUnit4ClassRunner}.
  */
 package com.btmatthews.selenium.junit4.rule;

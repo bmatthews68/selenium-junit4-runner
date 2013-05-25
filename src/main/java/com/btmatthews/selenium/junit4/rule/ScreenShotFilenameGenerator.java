@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 
 package com.btmatthews.selenium.junit4.rule;
 
-import java.io.File;
-
 import org.junit.runner.Description;
+
+import java.io.File;
 
 /**
  * Describes the interface for objects that generate unique file names for screen shots.
  *
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.5
  */
 public interface ScreenShotFilenameGenerator {

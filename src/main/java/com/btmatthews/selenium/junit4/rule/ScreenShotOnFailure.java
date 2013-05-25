@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,19 +28,27 @@ import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A method rule that captures screen shots when the test fails.
  *
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.5
  */
 public class ScreenShotOnFailure extends TestWatcher {
 
     /**
+     * Used to log failure messages.
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultScreenShotFilenameGenerator.class);
+
+    /**
      * Injected by the {@link com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner} if the Selenium RC
      * API is being used to drive the browser.
      */
+    @SuppressWarnings("unused")
     @SeleniumServer
     private Selenium server;
 
@@ -48,6 +56,7 @@ public class ScreenShotOnFailure extends TestWatcher {
      * Injected by the {@link com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner} if the Selenium Web
      * Driver API is being used to drive the browser.
      */
+    @SuppressWarnings("unused")
     @SeleniumWebDriver
     private WebDriver webDriver;
 
@@ -99,6 +108,7 @@ public class ScreenShotOnFailure extends TestWatcher {
                 server.captureEntirePageScreenshot(target.getAbsolutePath(), "");
             }
         } catch (final IOException e) {
+            LOGGER.error("I/O error capturing screen shot after failure", e);
         }
     }
 }

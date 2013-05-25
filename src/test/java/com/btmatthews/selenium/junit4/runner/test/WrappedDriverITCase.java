@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,57 +16,57 @@
 
 package com.btmatthews.selenium.junit4.runner.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import com.btmatthews.selenium.junit4.runner.SeleniumBrowser;
 import com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
 import com.btmatthews.selenium.junit4.runner.SeleniumServer;
 import com.btmatthews.selenium.junit4.runner.WrappedDriverConfiguration;
 import com.thoughtworks.selenium.Selenium;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Unit tests for the {@link WrappedDriverConfiguration} configuration style.
- * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ *
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.0
  */
 @RunWith(SeleniumJUnit4ClassRunner.class)
 @WrappedDriverConfiguration(browserURL = "http://www.google.com")
 public final class WrappedDriverITCase {
 
-	/**
-	 * The object used to start/stop the web browser used for testing.
-	 */
-	@SeleniumServer
-	private Selenium server;
-
-	/**
-	 * Verify that the test runner injected the Selenium Server that wraps the
-	 * web driver.
-	 */
-	@Test
-	public void testInjection() {
-		assertNotNull(server);
-		assertNotNull(browserName);
-		assertEquals("HtmlUnitDriver", browserName);
-	}
-
+    /**
+     * The object used to start/stop the web browser used for testing.
+     */
+    @SuppressWarnings("unused")
+    @SeleniumServer
+    private Selenium server;
     /**
      * The name of the browser being used for the test.
-     */	
-	@SeleniumBrowser
-	private String browserName;
+     */
+    @SuppressWarnings("unused")
+    @SeleniumBrowser
+    private String browserName;
 
-	/**
-	 * Verify that we can navigate to the Google home page.
-	 */
-	@Test
-	public void testHomePage() {
-		server.open("/");
-		assertEquals("Google", server.getTitle());
-	}
+    /**
+     * Verify that the test runner injected the Selenium Server that wraps the
+     * web driver.
+     */
+    @Test
+    public void testInjection() {
+        assertNotNull(server);
+        assertNotNull(browserName);
+        assertEquals("HtmlUnitDriver", browserName);
+    }
+
+    /**
+     * Verify that we can navigate to the Google home page.
+     */
+    @Test
+    public void testHomePage() {
+        server.open("/");
+        assertEquals("Google", server.getTitle());
+    }
 }

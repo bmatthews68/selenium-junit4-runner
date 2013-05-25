@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,17 @@
 
 package com.btmatthews.selenium.junit4.runner;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+import java.lang.annotation.*;
 
 /**
  * {@code WrappedDriverConfiguration} defines class-level meta-data which can be
  * used to instruct client code with regard to use a wrapped <a
  * href="http://seleniumhq.org">Selenium</a> web driver.
- * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ *
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.0
  */
 @Documented
@@ -41,14 +36,14 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 @SeleniumConfiguration
 public @interface WrappedDriverConfiguration {
 
-	/**
-	 * The browser URL.
-	 */
-	String browserURL();
+    /**
+     * The browser URL.
+     */
+    String browserURL();
 
-	/**
-	 * The web drivers used to launch the tests. By default we just run with <a
-	 * href="http://htmlunit.sourceforge.net/">HTML Unit</a>.
-	 */
-	Class<? extends WebDriver>[] baseDrivers() default { HtmlUnitDriver.class };
+    /**
+     * The web drivers used to launch the tests. By default we just run with <a
+     * href="http://htmlunit.sourceforge.net/">HTML Unit</a>.
+     */
+    Class<? extends WebDriver>[] baseDrivers() default {HtmlUnitDriver.class};
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
 
 package com.btmatthews.selenium.junit4.rule.test;
 
-import static org.junit.Assert.assertEquals;
-
 import com.btmatthews.selenium.junit4.rule.ScreenShotOnFailure;
 import com.btmatthews.selenium.junit4.runner.SeleniumJUnit4ClassRunner;
 import com.btmatthews.selenium.junit4.runner.SeleniumWebDriver;
@@ -28,10 +26,12 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Integration test cases for the {@link ScreenShotOnFailure} rule.
  *
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.5
  */
 @RunWith(SeleniumJUnit4ClassRunner.class)
@@ -39,16 +39,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class ScreenShotOnFailureITCase {
 
     /**
-     * The object used to start/stop the web browser used for testing.
-     */
-    @SeleniumWebDriver
-    private WebDriver webDriver;
-
-    /**
      * This run dumps screen shots to the target/screenshots directory when the test case fails.
      */
     @Rule
     public ScreenShotOnFailure screenShotRule = new ScreenShotOnFailure("target/screenshots");
+    /**
+     * The object used to start/stop the web browser used for testing.
+     */
+    @SuppressWarnings("unused")
+    @SeleniumWebDriver
+    private WebDriver webDriver;
 
     /**
      * This test case always fails triggering the {@link #screenShotRule} rule which will take a screen shot and
@@ -57,6 +57,6 @@ public class ScreenShotOnFailureITCase {
     @Test
     public void testRule() {
         webDriver.navigate().to("http://www.google.com");
-        assertEquals("", webDriver.getTitle());
+        assertEquals("Google", webDriver.getTitle());
     }
 }

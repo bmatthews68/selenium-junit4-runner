@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import com.btmatthews.selenium.junit4.runner.WebDriverConfiguration;
 /**
  * Unit tests for the {@link WebDriverConfiguration} configuration style.
  * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.0
  */
 @RunWith(SeleniumJUnit4ClassRunner.class)
@@ -41,12 +41,14 @@ public final class WebDriverITCase {
 	/**
 	 * The object used to start/stop the web browser used for testing.
 	 */
+    @SuppressWarnings("unused")
 	@SeleniumWebDriver
 	private WebDriver webDriver;
 
     /**
      * The name of the browser being used for the test.
-     */	
+     */
+    @SuppressWarnings("unused")
 	@SeleniumBrowser
 	private String browserName;
 

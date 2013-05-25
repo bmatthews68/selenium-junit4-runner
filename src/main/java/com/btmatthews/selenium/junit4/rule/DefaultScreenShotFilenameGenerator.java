@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Thomas Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,29 +16,33 @@
 
 package com.btmatthews.selenium.junit4.rule;
 
+import org.junit.runner.Description;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import org.junit.runner.Description;
-
 /**
  * Default implementation of the {@link ScreenShotFilenameGenerator} that generates
  *
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @author <a href="mailto:brian@btmatthews.com">Brian Thomas Matthews</a>
  * @since 1.0.5
  */
 public class DefaultScreenShotFilenameGenerator implements ScreenShotFilenameGenerator {
+    /**
+     * Date formatter used to generate unique file names.
+     */
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMddhhmmssSSS");
-
     /**
      * The root directory under which the screen shot files will be placed.
      */
     private final File target;
 
     /**
-     * @param directory
+     * The directory in which the screen shot file will be created.
+     *
+     * @param directory The directory.
      */
     public DefaultScreenShotFilenameGenerator(final File directory) {
         target = directory;
@@ -55,7 +59,7 @@ public class DefaultScreenShotFilenameGenerator implements ScreenShotFilenameGen
         final StringBuilder builder = new StringBuilder();
         builder.append(description.getMethodName());
         builder.append('-');
-        builder.append(new SimpleDateFormat("yyyyMMddhhmmssSSS").format(new Date()));
+        builder.append(DATE_FORMAT.format(new Date()));
         builder.append('-');
         builder.append(UUID.randomUUID().toString());
         builder.append(".png");
