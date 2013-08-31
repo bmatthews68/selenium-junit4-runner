@@ -3,11 +3,11 @@
          xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <prerequisites>
-        <maven>3.0.5</maven>
+        <maven>3.1.0</maven>
     </prerequisites>
     <groupId>com.btmatthews.selenium.junit4</groupId>
     <artifactId>selenium-junit4-runner</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <name>Selenium Junit 4 Runner</name>
     <description>Annotations to simplify the use of Selenium in JUnit 4 tests</description>
     <inceptionYear>2011</inceptionYear>
@@ -75,7 +75,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.15</version>
+                <version>2.16</version>
             </plugin>
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
@@ -130,7 +130,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.15</version>
+                <version>2.16</version>
                 <executions>
                     <execution>
                         <id>run-integration-tests</id>
@@ -194,12 +194,12 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.15</version>
+                <version>2.16</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>2.6</version>
                 <configuration>
                     <check>true</check>
                     <quiet>true</quiet>
@@ -229,12 +229,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.33.0</version>
+            <version>2.35.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
-            <version>2.33.0</version>
+            <version>2.35.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
